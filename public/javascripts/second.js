@@ -7,7 +7,7 @@ $(".dropdown-item").on('click', function () {
     var x = $(this).find('.duration').text();
     var y = $(this).find('.price').text();
     $(this).closest('.row').find('.select-values').text(x + " and $" + y);
-    .card-title
+    // .card-title
     var yy = parseInt(y);
     var xx = parseInt(x);
     // subTotal = yy;

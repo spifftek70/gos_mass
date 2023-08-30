@@ -1,0 +1,774 @@
+extends layout
+
+append head
+append style
+append content
+
+    include navbar
+    #staticBackdrop.modal.fade(data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true')
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-header
+                    h5#staticBackdropLabel.modal-title Service Cart
+                    button.btn-close(type='button' data-bs-dismiss='modal' aria-label='Close')
+                .modal-body
+                    form#bookingForm(action='/action_page.php' method='get' name='myForm')
+                        //- .row.justify-content-between.text-left
+                        .form-group.col-sm-8.flex-column.d-flex
+                            p
+                                label.form-label(for='exampleFormControlInput1') First Name
+                                input.form-control.form-control-lg#fname(type='text' name='fname' placeholder='Enter your first name' onblur='validate(1)')
+                        .form-group.col-sm-8.flex-column.d-flex
+                            p
+                                label.form-label(for='exampleFormControlInput1') Last Name
+                                input.form-control.form-control-lg#lname(type='text' name='lname' placeholder='Enter your last name' onblur='validate(2)')
+                            //- .row.justify-content-between.text-left
+                        .form-group.col-sm-8.flex-column.d-flex
+                            p 
+                                label.form-label(for='exampleFormControlInput1') Email address
+                                input.form-control.form-control-lg#email(type='text' name='email' placeholder='youremail@what.com' onblur='validate(3)')
+                        .form-group.col-sm-8.flex-column.d-flex 
+                            p
+                                label.form-label(for='exampleFormControlInput1') Phone Number
+                                input.form-control.form-control-lg#phone(type='text' name='phone' placeholder='123-456-7890' onblur='validate(4)')
+                            //- .row.justify-content-between.text-left
+                        .form-group.col-sm-8.flex-column.d-flex
+                            p
+                                label.form-label(for='exampleFormControlInput1') Location / Address
+                                input.form-control.form-control-lg#address(type='text' name='address' placeholder='1234 Relax Ln, Scottsdale, AZ 85200' onblur='validate(5)')
+                        .form-group.col-sm-8
+                            p
+                                button.btn.btn-secondary.m-2(type='button' data-bs-dismiss='modal') Cancel
+                                button.btn.btn-primary.m-2(type='submit') Purchase
+
+                //- .modal-footer
+                //-     .form-group.col-sm-8
+                //-         button.btn.btn-secondary(type='button' data-bs-dismiss='modal') Cancel
+                //-         button.btn.btn-primary(type='submit') Purchase
+
+    .container-fluid.idx-cntr.mt-4.text-left
+        .row.row-service.mb-1.align-items-center.justify-content-center
+            h1.text-center.mb-3.h-title Select Services
+            ul#myTab.nav.nav-pills.align-items-center.justify-content-center(role='tablist')
+                li.nav-item.active(role='presentation')
+                    a#massageSer-tab.mx-4(data-bs-toggle='pill' data-bs-target='#massageSer' type='button' role='tab' aria-controls='massageSer' aria-selected='true') Massage Therapy Services
+                li.nav-item(role='presentation')
+                    a#cosSer-tab.mx-4(data-bs-toggle='pill' data-bs-target='#cosSer' type='button' role='tab' aria-controls='cosSer' aria-selected='false') Skin & Cosmetic Treatments
+                li.nav-item(role='presentation')
+                    a#addSer-tab.mx-4(data-bs-toggle='pill' data-bs-target='#addSer' type='button' role='tab' aria-controls='addSer' aria-selected='false') Additional Therapies
+
+        .row.row-service.mb-1.align-items-center.justify-content-center.tab-content
+            #massageSer.container-fluid.container-service.pb-5.align-items-center.justify-content-center.tab-pane.fade.in(role='tabpanel' aria-labelledby='massageSer-tab')
+                h2.text-center.pb-0 Massage Therapy Services
+                .row.row-cols-1.row-cols-md-2.g-4.mx-3
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                                li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-right
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Sound Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                                li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='') 
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Sound Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+            #cosSer.container-fluid.container-service.pb-5.align-items-center.justify-content-center.tab-pane.fade(role='tabpanel' aria-labelledby='cosSer-tab')
+                h2.text-center.pb-0 Skin & Cosmetic Treatments
+                .row.row-cols-1.row-cols-md-2.g-4.mx-3
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Sound Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-right
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Sound Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='') 
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Sound Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:                                                
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-center
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+            #addSer.container-fluid.container-service.pb-5.align-items-center.justify-content-center.tab-pane.fade(role='tabpanel' aria-labelledby='addSer-tab')
+                h2.text-center.pb-0 Additional Therapies
+                .row.row-cols-1.row-cols-md-2.g-4.mx-3     
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-right
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:
+                                        p.card-text
+                                            //- <select class="form-select" aria-label="Default select example">
+                                            //-     <option selected>Session Duration</option>
+                                            //-     <option value="1">60 mins &nbsp; 
+                                            //-         span &nbsp; $125</option>
+                                            //-     <option value="2">75 mins &nbsp;  
+                                            //-         span &nbsp;  $150</option>
+                                            //-     <option value="3">90 mins &nbsp;  
+                                            //-         span &nbsp;  $175</option>
+                                            //-     </select>   
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-right
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-right
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+                    .col
+                        .card
+                            .card-body
+                                h4.card-title Remote Reiki Session
+                                .row.align-items-center.row-cols-2
+                                    .col.col-10.col-md-11
+                                        p.card-text
+                                            | Makai Lomi Lomi holds a treasure trove of benefits to be discovered:
+                                        p.card-text
+                                            .btn-group
+                                            button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false') Session Duration
+                                            ul.dropdown-menu.dropdown-menu-end
+                                               li
+                                                button.dropdown-item(type='button')
+                                                    span.duration 60 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 125
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 75 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 150
+                                                li
+                                                button.dropdown-item(type='button') 
+                                                    span.duration 90 
+                                                    span.mins mins &nbsp;
+                                                    span.dollar &nbsp; $
+                                                    span.price 175
+                                        span.card-text.select-values
+                                    .col.col-2.col-md-1.m-0.pe-3
+                                        .form-check.checkbox-lg.text-right
+                                            input#flexCheckIndeterminate.form-check-input(type='checkbox' value='')
+        .container-fluid.pb-2.align-items-center.justify-content-center
+            .row.row-service.mb-1.d-flex.align-items-center.justify-content-center
+                .col.d-flex.align-items-center.justify-content-center
+                    .card.w-25
+                        .card-body.text-center
+                            h4.card-title Appointment Details 
+                            p.card-text.tally
+                                span#appt-dur 
+                                span#subtotal
+                            p.card-text
+                                button.btn.btn-warning.w-25(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop')
+                                    | Continue!
+    include foot
+    include foot2
+    include foot3
+append script

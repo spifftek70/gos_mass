@@ -1,0 +1,39 @@
+extends layout
+
+append head
+append style
+append content
+    
+    include navbar
+    .container-fluid.sixth
+      .row.justify-content-center.ftRow
+        .col.d-flex.align-items-center.justify-content-center
+          h3 Contact Me
+          ul.nobull(style='list-style: none;')
+            li
+              a(href='emailto: goddessofthesunmobile@gmail.com')
+                i.fa-solid.fa-envelope &nbsp; Email
+            li
+              a(href="tel:973-494-1984") 
+                i.fa-solid.fa-phone &nbsp; 973-494-1984
+        .col.d-flex.align-items-center.justify-content-center
+          .row.justify-content-center.ftRow
+          h3 Follow Me
+            .row.justify-content-center
+              .col
+                a(href='#')
+                  i.fa-brands.fa-facebook
+              .col
+                a(href='#')
+                  i.fa-brands.fa-x-twitter
+                  //- a(href='#')
+                //-   i.icon.ion-social-snapchati
+                //- a(href='#')
+              .col
+                a(href='#')
+                  i.fa-brands.fa-instagram 
+    .blank
+    
+
+    include foot
+append script     

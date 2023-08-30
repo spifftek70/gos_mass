@@ -1,0 +1,128 @@
+extends layout
+
+append head
+append style
+append content
+    
+    include navbar
+
+    .container-fluid.idx-cntr.first.mt-5#about
+        .row.massInfo.row-cols-1.row-cols-md-1.row-cols-lg-2
+            .col.left_col.d-flex.align-items-center.justify-content-center.p-0.m-0
+                .card#logoCard.fadein
+                    .card-body
+                        img.p-0.m-0(src='images/GOTSMT.png' alt='AirPlay' style='width:350px; height:200px;')
+            .col.right_col.d-flex.align-items-center.justify-content-center.p-0.m-0#AboutItAll
+                .card.w-75#aboutCarol.fadein
+                    .card-body
+                        h3.text-center About Carol
+                        p
+                        | Carol is an accomplished licensed massage therapist, boasting an impressive track record of over 12 years immersed in the world of therapeutic massage. Her expertise shines through in her dedicated practice, where she has been a steadfast provider of rejuvenating massage therapy services in the heart of the East Valley.
+                        p
+                        | Her journey has been one of continuous learning and growth, as evidenced by her diverse skill set and extensive training. Carol has gone above and beyond, augmenting her core massage therapy qualifications with specialized certifications that set her apart. She holds advanced training and certifications in an array of holistic practices, including Reiki Healing, Maikai Lomi Lomi, and Pelvic Floor Disorder Massage. These additional accolades are a testament to her commitment to providing comprehensive care and addressing her clients&apos; diverse needs.
+                        p
+                        | What truly sets Carol apart, however, is her profound understanding of the modern challenges individuals face when seeking relaxation and healing. She recognizes that the concept of unwinding can be challenging within the confines of an unfamiliar setting or amid the demands of busy schedules. In response to these common obstacles, Carol has ingeniously structured her services to be as accommodating as possible.
+                        p
+                        | With a keen focus on client comfort and convenience, Carol offers her massage therapy services in a mobile capacity. By eliminating the need for her clients to travel to a designated location, she not only saves them valuable time but also creates an environment where relaxation can thrive. This ingenious approach allows her clients to experience the benefits of her expertise in the comfort and familiarity of their own surroundings. Whether it&apos;s the coziness of their homes or the tranquility of their offices, Carol&apos;s mobile services make well-being and relaxation a seamless part of their daily lives.
+                        p
+                        | In essence, Carol embodies the ideals of a modern massage therapist who goes beyond the basics to provide a truly tailored and holistic experience. Her years of experience, coupled with her diverse skill set and mobile services, make her a true asset to the community of the East Valley and a beacon of tranquility and healing for all who seek her expertise.
+
+    .blank
+    .container-fluid.third.pb-4#services
+        .row.align-items-center.g-4
+            h2.w-100.mt-5.text-center The Services I Provide
+            .col.d-flex.align-items-center.justify-content-center
+                table.table.w-75.text-center.fadein
+                    thead
+                        tr
+                            th Massage Therapy
+                            th Skin & Cosmetic Treatments
+                            th Additional Therapies
+                    tbody
+                        tr
+                            td Swedish Massage
+                            td Levitate Facial
+                            td Aromatherapy - Eucalyptus
+                        tr
+                            td Deep Tissue Therapy
+                            td Express Facial
+                            td Aromatherapy - Lavender
+                        tr
+                            td Makai Lomi Lomi Massage
+                            td Brazilian Wax (women and men)
+                            td Aromatherapy - Peppermint
+                        tr
+                            td Prenatal Massage
+                            td Brow Tint
+                            td Cupping Therapy
+                        tr
+                            td Reflexology
+                            td Lash Tint
+                            td Sound Healthing
+                        tr
+                            td Pelvic Floor Disorder
+                            td Lash Lift
+                            td Back Treatments 
+                        tr 
+                            td 
+                            td Acne Treatments 
+                            td 
+                        tr 
+                            td 
+                            td Body Wraps
+                            td 
+                        tr 
+                            td 
+                            td Anti-aging Treatments
+                            td 
+                        tr 
+                            td 
+                            td Body Scrubs
+                            td  
+                        tr 
+                            td 
+                            td Eye Treatments
+                            td    
+
+        .row.align-items-center.row-cols-1.row-cols-md-2.row-cols-lg-3.g-4.fadein
+            h2.w-100.mt-5.text-center Theraputic Specialities
+            .col.d-flex.align-items-center.justify-content-center
+                .card.w-75.catusCd.text-center
+                    img.card-img-top(src='images/reiki_card.png' alt='lomi')
+                    .card-body.d-flex.flex-column
+                        h5.card-title Reiki
+                        p.card-text Experience the transformative power of Reiki – a hands-on healing technique that allows practitioners to channel the universal life force energy through their hands to restore your vitality and balance. 
+                        a.btn.btn-dark.mt-auto.actNow#reikiBtn(href='#reikiColl') Learn More
+            .col.d-flex.align-items-center.justify-content-center
+                .card.w-75.catusCd.text-center
+                    img.card-img-top(src='images/lomi_card.jpeg' alt='lomi')
+                    .card-body.d-flex.flex-column
+                        h5.card-title Makai Lomi Lomi
+                        p.card-text Experience the art of Makai Lomi Lomi as nourishing oils glide in gentle, rhythmic motions across your entire body – from head to toe, encompassing even the belly.
+                        a.btn.btn-dark.mt-auto.actNow#lomiBtn(href='#') Learn More    
+            .col.d-flex.align-items-center.justify-content-center
+                .card.w-75.catusCd.text-center
+                    img.card-img-top(src='images/pelvic_card.jpeg' alt='pelvic')
+                    .card-body.d-flex.flex-column
+                        h5.card-title Pelvic Floor Disorders & Massage
+                        p.card-text Pelvic floor disorders encompass a range of challenges affecting essential internal organs. This therapy restores both strength and structure.
+                        a.btn.btn-dark.mt-auto.actNow#pelvicBtn(href='#') Learn More
+    .blank
+    .container-fluid.fourth.w-100.pb-4#thInfo
+    .blank4
+    .container-fluid.fifth.pb-4#reviews
+        .row.align-items-center.g-4.mb-3
+            h2.w-100.mt-5.text-center Reviews
+            .col.d-flex.align-items-center.justify-content-center
+                .elfsight-app-57d90dc3-4205-4628-9493-78672b24c09f.fadein
+        .row.align-items-center.g-4.mt-3
+            .col.d-flex.align-items-center.justify-content-center
+                .elfsight-app-7c382427-3b8a-4872-be6d-734394653b58.fadein
+                //- .card.w-75.revCard
+                //-     .card-body.d-flex.flex-column.revCard
+                //-         .sk-ww-google-reviews.w-75(data-embed-id='184743')
+                //-         script(src='https://widgets.sociablekit.com/google-reviews/widget.js', async='', defer='')
+
+    include foot
+    include foot3
+append script     

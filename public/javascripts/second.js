@@ -91,5 +91,6 @@ $('.clearFields').on('click', function(){
     subTotal = 0;
     timeTotal = 0;
     itemNum = 0;
-    $('#bookingForm').find('.add-on-input').remove()
+    $('#bookingForm').find('.add-on-input').remove();
+    $('#table-cart').hide();
 });

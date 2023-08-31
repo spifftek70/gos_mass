@@ -22,7 +22,7 @@ $(".dropdown-item").on('click', function () {
         newValue = subTotal;
     }
     itemNum = itemNum +1;
-    $('#subtotal').text(" Subtotal of $" + newValue + "   ");
+    // $('#subtotal').text(" Subtotal of $" + newValue + "   ");
     var yy = parseInt(y);
     // subTotal = yy;
     var newTime;

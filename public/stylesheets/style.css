@@ -14,6 +14,10 @@ body {
   background-image: url("/images/sunset_nav.png"), linear-gradient(#fa6520, #f5d467, #ebddad, #f7f2df);
 }
 
+#table-cart{
+  display: none;
+}
+
 .modal-body{
   background-color: #f7f2df;
   color:#363636;
@@ -380,3 +384,4 @@ h3{
 .checkbox-xl .form-check-label {
   padding-top: 19px;
 }
+

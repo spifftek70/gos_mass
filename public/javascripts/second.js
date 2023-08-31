@@ -5,14 +5,12 @@ var subTotal = 0;
 var timeTotal = 0;
 var itemNum = 0;
 $(".dropdown-item").on('click', function () {
-    // var tester = $('#table-cart > tbody tr').length ;
     var x = $(this).find('.duration').text();
     var y = $(this).find('.price').text();
-    // $(this).closest('.row').find('.select-values').text(x + " and $" + y);
+    $(this).closest('.dropdown-menu').prop("disabled", true);
     var serviceTitel = $(this).closest('.card-body').find('.card-title').text();
     var yy = parseInt(y);
     var xx = parseInt(x);
-    // subTotal = yy;
     var newValue;
     if (subTotal == 0){
         subTotal = yy;
@@ -24,7 +22,6 @@ $(".dropdown-item").on('click', function () {
     itemNum = itemNum +1;
     $('#subtotal').text(" Subtotal of $" + newValue + "   ");
     var yy = parseInt(y);
-    // subTotal = yy;
     var newTime;
     if (timeTotal == 0){
         timeTotal = xx;

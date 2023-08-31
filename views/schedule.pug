@@ -780,8 +780,10 @@ append content
                             //-     span#appt-dur 
                             //-     span#subtotal
                             p.card-text.text-center
-                                button.btn.btn-warning.w-25(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop')
+                                button.btn.btn-warning.w-25.mx-2(type='button' data-bs-toggle='modal' data-bs-target='#staticBackdrop')
                                     | Continue!
+                                button.btn.btn-secondary.clearFields.w-25.mx-2(type='button')
+                                    | Clear
     include foot
     include foot2
     include foot3

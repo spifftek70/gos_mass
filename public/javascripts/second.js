@@ -5,7 +5,7 @@ var subTotal = 0;
 var timeTotal = 0;
 var itemNum = 0;
 $(".dropdown-item").on('click', function () {
-    var tester = $('#table-cart > tbody tr').length ;
+    // var tester = $('#table-cart > tbody tr').length ;
     var x = $(this).find('.duration').text();
     var y = $(this).find('.price').text();
     $(this).closest('.row').find('.select-values').text(x + " and $" + y);
@@ -51,9 +51,9 @@ $(".dropdown-item").on('click', function () {
     + '<td> Subtotal Amount: </td>'
     + '<td> $' + newValue + '</td>'
     + '</tr>');
-    $('#table-cart > tbody tr:last :eq(0)').css({"color":"white", "background-color":"black"});
+    $('#table-cart > tbody tr:last :eq(0)').css({"color":"white", "background-color":"black", "textAlign": "right"});
     $('#table-cart > tbody tr:last :eq(1)').css({"color":"white", "background-color":"black"});
-    $('#table-cart > tbody tr:last :eq(2)').css({"color":"white", "background-color":"black"});
+    $('#table-cart > tbody tr:last :eq(2)').css({"color":"white", "background-color":"black", "textAlign": "right"});
     $('#table-cart > tbody tr:last :eq(3)').css({"color":"white", "background-color":"black"});
     $('#table-cart').show();
     var closeCheckbox = $(this).closest('.row').find('input[type=checkbox]');
@@ -62,7 +62,7 @@ $(".dropdown-item").on('click', function () {
     } else {
         closeCheckbox.prop('checked', false);
     }
-    $('#marker').before("<div class='form-group col-sm-8 flex-column d-flex'><p>" + 
+    $('#marker').before("<div class='form-group col-sm-8 add-on-input flex-column d-flex'><p>" + 
     "<label class='form-label' for='exampleFormControlInput1'>Service</label>" +
     "<input class='form-control form-control-lg' id='address' type='text' name='address' onblur='validate(5)' value='" + serviceTitel + "'/></p></div>")
 });
@@ -79,4 +79,17 @@ $(window).on('load', function(event) {
     var tab = new bootstrap.Tab(someTabTriggerEl)
     
     tab.show()
+});
+
+$('.clearFields').on('click', function(){
+    $('input[type=checkbox]').each(
+        function (index, checkbox) {
+            checkbox.checked = false;
+    });
+    $('#table-cart tbody').find("tr:gt(0)").remove();
+    $('#table-cart > tbody tr:last').empty();
+    subTotal = 0;
+    timeTotal = 0;
+    itemNum = 0;
+    $('#bookingForm').find('.add-on-input').remove()
 });

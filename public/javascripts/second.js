@@ -7,7 +7,6 @@ var itemNum = 0;
 $(".dropdown-item").on('click', function () {
     var x = $(this).find('.duration').text();
     var y = $(this).find('.price').text();
-    $(this).closest('.dropdown-toggle-menu').prop("disabled", true);
     var serviceTitel = $(this).closest('.card-body').find('.card-title').text();
     var yy = parseInt(y);
     var xx = parseInt(x);
@@ -64,6 +63,10 @@ $(".dropdown-item").on('click', function () {
     "<input class='form-control form-control-lg' id='address' type='text' name='address' onblur='validate(5)' value='" + serviceTitel + "'/></p></div>")
 });
 
+$(".dropdown-toggle").on('hidden.bs.dropdown', function () {
+    $(this).closest('.card-body').find('.dropdown-toggle').prop("disabled", true);
+});
+
 $(".row input:checkbox").on('change', function() {
     var ischecked= $(this).is(':checked');
     if(!ischecked){
@@ -90,4 +93,13 @@ $('.clearFields').on('click', function(){
     itemNum = 0;
     $('#bookingForm').find('.add-on-input').remove();
     $('#table-cart').hide();
+    $('.dropdown-toggle').prop("disabled", false);
+});
+
+$('.more-info').on('click', function(){
+    var wc = $(this).attr('prop');
+    $.get("/services", function(responseHTML, status){
+        var eaItem = $(responseHTML).filter(wc)
+        $('#ser-details').html(eaItem);
+    });
 });

@@ -18,6 +18,11 @@ body {
   display: none;
 }
 
+.select-values{
+  font-size: 16px;
+  color: #666666 !important;
+}
+
 .modal-body{
   background-color: #f7f2df;
   color:#363636;

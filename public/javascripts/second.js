@@ -8,7 +8,7 @@ $(".dropdown-item").on('click', function () {
     // var tester = $('#table-cart > tbody tr').length ;
     var x = $(this).find('.duration').text();
     var y = $(this).find('.price').text();
-    $(this).closest('.row').find('.select-values').text(x + " and $" + y);
+    // $(this).closest('.row').find('.select-values').text(x + " and $" + y);
     var serviceTitel = $(this).closest('.card-body').find('.card-title').text();
     var yy = parseInt(y);
     var xx = parseInt(x);
@@ -67,12 +67,12 @@ $(".dropdown-item").on('click', function () {
     "<input class='form-control form-control-lg' id='address' type='text' name='address' onblur='validate(5)' value='" + serviceTitel + "'/></p></div>")
 });
 
-// $(".row input:checkbox").on('change', function() {
-//     var ischecked= $(this).is(':checked');
-//     if(!ischecked){
-//         $(this).closest('.row').find('.select-values').text("");
-//     }
-// }); 
+$(".row input:checkbox").on('change', function() {
+    var ischecked= $(this).is(':checked');
+    if(!ischecked){
+        $(this).closest('.row').find('.select-values').text("");
+    }
+}); 
 
 $(window).on('load', function(event) {
     var someTabTriggerEl = $('#massageSer-tab')

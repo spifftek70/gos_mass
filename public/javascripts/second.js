@@ -7,7 +7,7 @@ var itemNum = 0;
 $(".dropdown-item").on('click', function () {
     var x = $(this).find('.duration').text();
     var y = $(this).find('.price').text();
-    $(this).closest('.dropdown-menu').prop("disabled", true);
+    $(this).closest('.dropdown-toggle-menu').prop("disabled", true);
     var serviceTitel = $(this).closest('.card-body').find('.card-title').text();
     var yy = parseInt(y);
     var xx = parseInt(x);

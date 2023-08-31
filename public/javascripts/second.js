@@ -22,7 +22,7 @@ $(".dropdown-item").on('click', function () {
         newValue = subTotal;
     }
     itemNum = itemNum +1;
-    // $('#subtotal').text(" Subtotal of $" + newValue + "   ");
+    $('#subtotal').text(" Subtotal of $" + newValue + "   ");
     var yy = parseInt(y);
     // subTotal = yy;
     var newTime;
@@ -67,12 +67,12 @@ $(".dropdown-item").on('click', function () {
     "<input class='form-control form-control-lg' id='address' type='text' name='address' onblur='validate(5)' value='" + serviceTitel + "'/></p></div>")
 });
 
-$(".row input:checkbox").on('change', function() {
-    var ischecked= $(this).is(':checked');
-    if(!ischecked){
-        $(this).closest('.row').find('.select-values').text("");
-    }
-}); 
+// $(".row input:checkbox").on('change', function() {
+//     var ischecked= $(this).is(':checked');
+//     if(!ischecked){
+//         $(this).closest('.row').find('.select-values').text("");
+//     }
+// }); 
 
 $(window).on('load', function(event) {
     var someTabTriggerEl = $('#massageSer-tab')

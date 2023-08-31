@@ -62,7 +62,7 @@ $(".dropdown-item").on('click', function () {
     } else {
         closeCheckbox.prop('checked', false);
     }
-    $('#marker').before("<div class='form-group col-sm-8 flex-column d-flex'><p>" +
+    $('#marker').before("<div class='form-group col-sm-8 flex-column d-flex'><p>" + 
     "<label class='form-label' for='exampleFormControlInput1'>Service</label>" +
     "<input class='form-control form-control-lg' id='address' type='text' name='address' onblur='validate(5)' value='" + serviceTitel + "'/></p></div>")
 });

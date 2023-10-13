@@ -4,7 +4,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-color: #f7f2df;
+  background-color: black;
   color: white; text-shadow: rgb(43, 43, 43) 0.1em 0.1em 0.3em;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -88,11 +88,10 @@ a:active{
 } */
 
 #aboutCarol{
-  background-color: #f6f2e3;
-  background: rgb(209, 203, 181); /* Fallback for older browsers without RGBA-support */
-  background: rgba(162, 154, 127, 0.75);
+  background-image: url("/images/gold-bk.avif"), linear-gradient(#ae9110, #cba21c, #eacb65);
+  background: rgba(217, 164, 30, 0.75);
   font-size: 18px;
-  color: whitesmoke;
+  color: black;
 }
 
 .container {
@@ -189,9 +188,17 @@ p {
 .blank,
 .other {
   width: 100%;
+  min-height: 30vh;
+  /* background-color: black; */
+  background-color: var(--color);
+}
+
+.blank2,
+.other {
+  width: 100%;
   min-height: 20vh;
-  background-color: black;
-  /* background-color: var(--color); */
+  /* background-color: black; */
+  background-color: var(--color);
 }
 
 .blank4,
@@ -204,8 +211,8 @@ p {
 .blank6,
 .other {
   width: 100%;
-  min-height: 10vh;
-  background-color: #f7f2df;
+  min-height: 15vh;
+  background-color: var(--color);
 }
 
 .massInfo{
@@ -238,11 +245,13 @@ p {
 }
 .catusCd{
   background-color: goldenrod;
+  background-image: url("/images/gold-bk.avif"), linear-gradient(#ae9110, #cba21c, #eacb65);
   color: black;
 }
 
 .navbar{
   background-color: goldenrod;
+  background-image: url("/images/gold-bk.avif"), linear-gradient(#ae9110, #cba21c, #eacb65);
   /* background-image: url("/images/sunset_nav.png"), linear-gradient(#fa6520, #f5d467, #ebddad, #f7f2df); */
   /* background-image: url("/images/sunset_nav.png"); */
   background-size: cover;
@@ -310,22 +319,47 @@ p {
  
 footer{
   /* color: white; */
-  background-color: goldenrod;
+  /* background-color: goldenrod;
+  background-image: url("/images/gold-bk.avif"), linear-gradient(#ae9110, #cba21c, #eacb65); */
+  font-size: 12px;
 }
 
 .sixth{
-  color: black;
+  /* color: black; */
   text-shadow: 2px 1px 2px grey;
   background-color: goldenrod;
-  height: 100px;
+  background-image: url("/images/gold-bk.avif"), linear-gradient(#ae9110, #cba21c, #eacb65);
+  height: 80px;
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 12px;
 }
 .ftRow{
   background-color: goldenrod;
+  background-image: url("/images/gold-bk.avif"), linear-gradient(#ae9110, #cba21c, #eacb65);
   color: black;
 }
+
+.actNow,
+a.link{
+  color: white !important;
+}
+.actNow,
+a:visited{
+  color: black;
+  text-shadow: 2px 1px 2px grey;
+}
+.actNow,
+a:hover{
+  color: black;
+  text-shadow: 2px 1px 2px grey;
+}
+.actNow,
+a:active{
+  color: black;
+  text-shadow: 2px 1px 2px grey;
+}
+
 footer,
 a:link{
   color: black;
